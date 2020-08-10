@@ -4,17 +4,13 @@ class Solution {
         int A = 1; int B = 1; int C = 1; int D = 1; int E = 1; int F = 1; int G = 1; int H = 1;
         int I = 1; int J = 1; int K = 1; int L = 1; int M = 1; int N = 1; int O = 1; int P = 1;
         int Q = 1; int R = 1; int S = 1; int T = 1; int U = 1; int V = 1; int W = 1; int X = 1;
-        int Y = 1; int Z = 1;
-       
-        int result = 0;
-      
-        for(int i = s.length()-1; i > -1; i--)
+        int Y = 1; int Z = 1;    
+        int result = 0;    
+        for(int i = 0; i < s.length(); i++)
         {
-            result += Math.pow(getLetterValue(s.charAt(i)),i);
+            result += getLetterValue(s.charAt(i)) * Math.pow(26,s.length()-1-i);
         }
- 
-        return result;
-      
+        return result;   
     }
     
      public int getLetterValue(char letter)
@@ -46,6 +42,5 @@ class Solution {
             else if (letter == 'Y') return 25;
             else if (letter == 'Z') return 26;
             else return 0;
-
         }
 }
